@@ -262,6 +262,134 @@
           }
         }
       }
+    },
+    "cstm-fancy-button": {
+      "root": "projects/cstm-fancy-button/",
+      "sourceRoot": "projects/cstm-fancy-button/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/cstm-fancy-button",
+            "index": "projects/cstm-fancy-button/src/index.html",
+            "main": "projects/cstm-fancy-button/src/main.ts",
+            "polyfills": "projects/cstm-fancy-button/src/polyfills.ts",
+            "tsConfig": "projects/cstm-fancy-button/tsconfig.app.json",
+            "assets": [
+              "projects/cstm-fancy-button/src/favicon.ico",
+              "projects/cstm-fancy-button/src/assets"
+            ],
+            "styles": [
+              "projects/cstm-fancy-button/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cstm-fancy-button/src/environments/environment.ts",
+                  "with": "projects/cstm-fancy-button/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "cstm-fancy-button:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "cstm-fancy-button:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cstm-fancy-button:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/cstm-fancy-button/src/test.ts",
+            "polyfills": "projects/cstm-fancy-button/src/polyfills.ts",
+            "tsConfig": "projects/cstm-fancy-button/tsconfig.spec.json",
+            "karmaConfig": "projects/cstm-fancy-button/karma.conf.js",
+            "styles": [
+              "projects/cstm-fancy-button/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/cstm-fancy-button/src/favicon.ico",
+              "projects/cstm-fancy-button/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cstm-fancy-button/tsconfig.app.json",
+              "projects/cstm-fancy-button/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "cstm-fancy-button-e2e": {
+      "root": "projects/cstm-fancy-button-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/cstm-fancy-button-e2e/protractor.conf.js",
+            "devServerTarget": "cstm-fancy-button:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cstm-fancy-button:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/cstm-fancy-button-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "frameapp"

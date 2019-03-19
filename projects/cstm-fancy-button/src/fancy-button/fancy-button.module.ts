@@ -20,11 +20,7 @@ export class FancyButtonModule {
 
   ngDoBootstrap() {
     const elm = createCustomElement(FancyButtonComponent, { injector: this.injector });
-    try {
-      customElements.define('fancy-button', elm);
-    } catch (e) {
-      // skip, it is customized
-    }
+    customElements.define('fancy-button', elm);
   }
 
 }
