@@ -13,7 +13,6 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 export class FancyInputComponent {
   value = '';
   onKey(event: KeyboardEvent) {
-    console.log(event);
     this.value = event.key;
   }
 }

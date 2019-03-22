@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
     <br>
     This site extended via dropdown by custom plugin:
     <fancy-dropdown></fancy-dropdown>
+    <fancy-text></fancy-text>
   `,
   styleUrls: []
 })

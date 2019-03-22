@@ -3,8 +3,9 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FancyButtonComponent } from './fancy-button.component';
 // import { FancyInputComponent } from './fancy-input.component';
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FancyInputModule } from '../fancy-input/fancy-input.module';
+import { FancyTextModule } from '../fancy-text/fancy-text.module';
 
 @NgModule({
   declarations: [
@@ -12,11 +13,12 @@ import { FancyInputModule } from '../fancy-input/fancy-input.module';
   ],
   imports: [
     BrowserModule,
-    FancyInputModule
+    FancyInputModule,
+    FancyTextModule,
   ],
   providers: [],
   entryComponents: [FancyButtonComponent],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FancyButtonModule {
 
@@ -24,14 +26,11 @@ export class FancyButtonModule {
   }
 
   ngDoBootstrap() {
-    console.log('fancy button is loading..');
-
     const elmBtn = createCustomElement(FancyButtonComponent, { injector: this.injector });
     try {
       customElements.define('fancy-button', elmBtn);
     } catch (e) {
       // skip, it is customized
-      console.log('skip, button is customized');
     }
   }
 

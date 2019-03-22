@@ -18,14 +18,12 @@ import { FancyInputComponent } from './fancy-input.component';
 export class FancyInputModule {
 
   constructor(private injector: Injector) {
-    console.log('fancy input is loading..');
 
     const elmInp = createCustomElement(FancyInputComponent, { injector: this.injector });
     try {
       customElements.define('fancy-input', elmInp);
     } catch (e) {
       // skip, it is customized
-      console.log('skip, input is customized');
     }
   }
 

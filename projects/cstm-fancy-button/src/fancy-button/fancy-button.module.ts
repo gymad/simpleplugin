@@ -4,6 +4,7 @@ import { createCustomElement } from '@angular/elements';
 import { FancyButtonComponent } from './fancy-button.component';
 import { FancyInputModule } from '../fancy-input/fancy-input.module';
 import { FancyDropdownModule } from '../fancy-dropdown/fancy-dropdown.module';
+import { FancyTextModule } from 'projects/fancy-button/src/fancy-text/fancy-text.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FancyDropdownModule } from '../fancy-dropdown/fancy-dropdown.module';
   imports: [
     BrowserModule,
     FancyInputModule,
-    FancyDropdownModule
+    FancyDropdownModule,
+    FancyTextModule,
   ],
   providers: [],
   entryComponents: [FancyButtonComponent],
@@ -24,8 +26,6 @@ export class FancyButtonModule {
   }
 
   ngDoBootstrap() {
-    console.log('custom fancy button is loading..');
-
     const elm = createCustomElement(FancyButtonComponent, { injector: this.injector });
     customElements.define('fancy-button', elm);
   }

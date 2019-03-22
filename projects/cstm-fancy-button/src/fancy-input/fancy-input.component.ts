@@ -15,7 +15,6 @@ export class FancyInputComponent {
   value = '';  
   message = '';
   onKey(event: any) {
-    console.log(event);
     this.value = event.target.value;
     this.message = this.value == 'fancy' ? 'Its fancy! :)' : 'Its not fancy :('
   }

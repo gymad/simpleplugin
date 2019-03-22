@@ -18,14 +18,11 @@ import { FancyDropdownComponent } from './fancy-dropdown.component';
 export class FancyDropdownModule {
 
   constructor(private injector: Injector) {
-    console.log('fancy dropdown is loading..');
-
     const elmDD = createCustomElement(FancyDropdownComponent, { injector: this.injector });
     try {
       customElements.define('fancy-dropdown', elmDD);
     } catch (e) {
       // skip, it is customized
-      console.log('skip, dropdown is customized');
     }
   }
 
