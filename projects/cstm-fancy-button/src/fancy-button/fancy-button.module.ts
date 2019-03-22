@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FancyButtonComponent } from './fancy-button.component';
+// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { FancyButtonComponent } from './fancy-button.component';
     BrowserModule
   ],
   providers: [],
-  entryComponents: [FancyButtonComponent]
+  entryComponents: [FancyButtonComponent],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FancyButtonModule {
 
@@ -19,6 +21,8 @@ export class FancyButtonModule {
   }
 
   ngDoBootstrap() {
+    console.log('custom fancy button is loading..');
+
     const elm = createCustomElement(FancyButtonComponent, { injector: this.injector });
     customElements.define('fancy-button', elm);
   }

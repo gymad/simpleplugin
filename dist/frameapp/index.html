@@ -1,63 +1,67 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Blue site</title>
-  <base href="file:///C:/devs/angular/pluginworld/frameapp/dist/frameapp/">
+  <base href="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- ------------------------------------- -->
-    <!-- ------------ ASSETS ----------------- -->
-    <!-- ------------------------------------- -->
+  <!-- ------------------------------------- -->
+  <!-- ------------ ASSETS ----------------- -->
+  <!-- ------------------------------------- -->
 
-    <!-- Consider putting the following UMD (!) bundles -->
-    <!-- into a big one -->
+  <!-- Consider putting the following UMD (!) bundles -->
+  <!-- into a big one -->
 
-    <!-- core-js for legacy browsers -->
-    <script src="./assets/core-js/core.js"></script>
+  <!-- core-js for legacy browsers -->
+  <script src="./assets/core-js/core.js"></script>
 
-    <!-- Zone.js -->
-    <!--
+  <!-- Zone.js -->
+  <!--
         Consider excluding zone.js when creating
         custom Elements by using the noop zone.
     -->
-    <script src="./assets/zone.js/zone.js"></script>
+  <script src="./assets/zone.js/zone.js"></script>
 
 
-    <!-- Polyfills for Browsers supporting
+  <!-- Polyfills for Browsers supporting
             Custom Elements. Needed b/c we downlevel
             to ES5. See: @webcomponents/custom-elements
     -->
-    <script src="./assets/custom-elements/src/native-shim.js"></script>
+  <script src="./assets/custom-elements/src/native-shim.js"></script>
 
 
-    <!-- Polyfills for Browsers not supporting
+  <!-- Polyfills for Browsers not supporting
             Custom Elements. See: @webcomponents/custom-elements
     -->
-    <script src="./assets/custom-elements/custom-elements.min.js"></script>
+  <script src="./assets/custom-elements/custom-elements.min.js"></script>
 
 
-    <!-- Rx -->
-    <script src="./assets/rxjs/rxjs.umd.js"></script>
+  <!-- Rx -->
+  <script src="./assets/rxjs/rxjs.umd.js"></script>
 
-    <!-- Angular Packages -->
-    <script src="./assets/core/bundles/core.umd.js"></script>
-    <script src="./assets/common/bundles/common.umd.js"></script>
-    <script src="./assets/platform-browser/bundles/platform-browser.umd.js"></script>
-    <script src="./assets/elements/bundles/elements.umd.js"></script>
+  <!-- Angular Packages -->
+  <script src="./assets/core/bundles/core.umd.js"></script>
+  <script src="./assets/common/bundles/common.umd.js"></script>
+  <script src="./assets/platform-browser/bundles/platform-browser.umd.js"></script>
+  <script src="./assets/elements/bundles/elements.umd.js"></script>
 
 
-    <!-- ------------------------------------- -->
-    <!-- ------------ PLUGINS ---------------- -->
-    <!-- ------------------------------------- -->
-    
-    <script type="text/javascript" src="../cstm-fancy-button/main.js"></script>
-    <script type="text/javascript" src="../fancy-button/main.js"></script>
-    
+  <!-- ------------------------------------- -->
+  <!-- ------------ PLUGINS ---------------- -->
+  <!-- ------------------------------------- -->
+
+  <script type="text/javascript" src="../cstm-fancy-button/main.js"></script>
+  <script type="text/javascript" src="../fancy-button/main.js"></script>
+
 </head>
+
 <body style="color: blue">
+  <h2>This is a fancy site with awesome Angular Elements</h2>
   <app-root></app-root>
 <script type="text/javascript" src="es2015-polyfills.js" nomodule></script><script type="text/javascript" src="scripts.js"></script><script type="text/javascript" src="main.js"></script></body>
+
 </html>
