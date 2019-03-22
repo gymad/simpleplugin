@@ -3,13 +3,15 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FancyButtonComponent } from './fancy-button.component';
 // import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
+import { FancyInputModule } from '../fancy-input/fancy-input.module';
 
 @NgModule({
   declarations: [
     FancyButtonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FancyInputModule
   ],
   providers: [],
   entryComponents: [FancyButtonComponent],

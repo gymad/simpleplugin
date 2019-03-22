@@ -5,15 +5,18 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
   selector: 'app-fancy-input',
   template: `
     Its a fancy input here:
-    <input style="border: 2px solid blue;" (keyup)="onKey($event)">
+    <input style="border: 2px solid green;" (keyup)="onKey($event)">
     {{ value }}
+    <br>customization says: <span> {{ message }}</span>
   `,
   styleUrls: []
 })
 export class FancyInputComponent {
-  value = '';
-  onKey(event: KeyboardEvent) {
+  value = '';  
+  message = '';
+  onKey(event: any) {
     console.log(event);
-    this.value = event.key;
+    this.value = event.target.value;
+    this.message = this.value == 'fancy' ? 'Its fancy! :)' : 'Its not fancy :('
   }
 }
