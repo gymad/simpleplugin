@@ -5,6 +5,9 @@ import { Component, Input } from '@angular/core';
   template: `
     <button style="color: green;" (click)="clicked()">{{ title }}</button>
     <span style="color: red;">{{ outputMessage }}</span>
+    <br>
+    This site extended via dropdown by custom plugin:
+    <fancy-dropdown></fancy-dropdown>
   `,
   styleUrls: []
 })

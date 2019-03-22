@@ -1,21 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injector } from '@angular/core';
+import { NgModule, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FancyButtonComponent } from './fancy-button.component';
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 import { FancyInputModule } from '../fancy-input/fancy-input.module';
+import { FancyDropdownModule } from '../fancy-dropdown/fancy-dropdown.module';
 
 @NgModule({
   declarations: [
-    FancyButtonComponent
+    FancyButtonComponent,
   ],
   imports: [
     BrowserModule,
-    FancyInputModule
+    FancyInputModule,
+    FancyDropdownModule
   ],
   providers: [],
   entryComponents: [FancyButtonComponent],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FancyButtonModule {
 
