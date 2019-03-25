@@ -4,7 +4,7 @@ import { createCustomElement } from '@angular/elements';
 import { FancyButtonComponent } from './fancy-button.component';
 import { FancyInputModule } from '../fancy-input/fancy-input.module';
 import { FancyDropdownModule } from '../fancy-dropdown/fancy-dropdown.module';
-import { FancyTextModule } from 'projects/fancy-button/src/fancy-text/fancy-text.module';
+//import { FancyTextModule } from 'projects/fancy-button/src/fancy-text/fancy-text.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { FancyTextModule } from 'projects/fancy-button/src/fancy-text/fancy-text
     BrowserModule,
     FancyInputModule,
     FancyDropdownModule,
-    FancyTextModule,
+    //FancyTextModule,
   ],
   providers: [],
   entryComponents: [FancyButtonComponent],
