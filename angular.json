@@ -390,6 +390,134 @@
           }
         }
       }
+    },
+    "cstm-fancy-dropdown": {
+      "root": "projects/cstm-fancy-dropdown/",
+      "sourceRoot": "projects/cstm-fancy-dropdown/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "options": {
+            "outputPath": "dist/cstm-fancy-dropdown",
+            "index": "projects/cstm-fancy-dropdown/src/index.html",
+            "main": "projects/cstm-fancy-dropdown/src/main.ts",
+            "polyfills": "projects/cstm-fancy-dropdown/src/polyfills.ts",
+            "tsConfig": "projects/cstm-fancy-dropdown/tsconfig.app.json",
+            "assets": [
+              "projects/cstm-fancy-dropdown/src/favicon.ico",
+              "projects/cstm-fancy-dropdown/src/assets"
+            ],
+            "styles": [
+              "projects/cstm-fancy-dropdown/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/cstm-fancy-dropdown/src/environments/environment.ts",
+                  "with": "projects/cstm-fancy-dropdown/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "cstm-fancy-dropdown:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "cstm-fancy-dropdown:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cstm-fancy-dropdown:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/cstm-fancy-dropdown/src/test.ts",
+            "polyfills": "projects/cstm-fancy-dropdown/src/polyfills.ts",
+            "tsConfig": "projects/cstm-fancy-dropdown/tsconfig.spec.json",
+            "karmaConfig": "projects/cstm-fancy-dropdown/karma.conf.js",
+            "styles": [
+              "projects/cstm-fancy-dropdown/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/cstm-fancy-dropdown/src/favicon.ico",
+              "projects/cstm-fancy-dropdown/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cstm-fancy-dropdown/tsconfig.app.json",
+              "projects/cstm-fancy-dropdown/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "cstm-fancy-dropdown-e2e": {
+      "root": "projects/cstm-fancy-dropdown-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/cstm-fancy-dropdown-e2e/protractor.conf.js",
+            "devServerTarget": "cstm-fancy-dropdown:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "cstm-fancy-dropdown:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/cstm-fancy-dropdown-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "frameapp"

@@ -5,7 +5,7 @@ import { Component } from "@angular/core";
     template: `
     <p style="color: brown;">
         Its a fancy text and the customization using it but wont affect it,
-        however it could.
+        however it could. (second edition in core)
     </p>`,    
 })
 export class FancyTextComponent {}
