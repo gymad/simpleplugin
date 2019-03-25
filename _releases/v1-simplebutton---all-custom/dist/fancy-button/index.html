@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FancyButton</title>
+  <base href="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- ------------------------------------- -->
+    <!-- ------------ ASSETS ----------------- -->
+    <!-- ------------------------------------- -->
+
+    <!-- Consider putting the following UMD (!) bundles -->
+    <!-- into a big one -->
+
+    <!-- core-js for legacy browsers -->
+    <script src="../frameapp/assets/core-js/core.js"></script>
+
+    <!-- Zone.js -->
+    <!--
+        Consider excluding zone.js when creating
+        custom Elements by using the noop zone.
+    -->
+    <script src="../frameapp/assets/zone.js/zone.js"></script>
+
+
+    <!-- Polyfills for Browsers supporting
+            Custom Elements. Needed b/c we downlevel
+            to ES5. See: @webcomponents/custom-elements
+    -->
+    <script src="../frameapp/assets/custom-elements/src/native-shim.js"></script>
+
+
+    <!-- Polyfills for Browsers not supporting
+            Custom Elements. See: @webcomponents/custom-elements
+    -->
+    <script src="../frameapp/assets/custom-elements/custom-elements.min.js"></script>
+
+
+    <!-- Rx -->
+    <script src="../frameapp/assets/rxjs/rxjs.umd.js"></script>
+
+    <!-- Angular Packages -->
+    <script src="../frameapp/assets/core/bundles/core.umd.js"></script>
+    <script src="../frameapp/assets/common/bundles/common.umd.js"></script>
+    <script src="../frameapp/assets/platform-browser/bundles/platform-browser.umd.js"></script>
+    <script src="../frameapp/assets/elements/bundles/elements.umd.js"></script>
+
+
+
+</head>
+<body>
+  <fancy-input></fancy-input>
+  <fancy-button></fancy-button>
+  <fancy-text></fancy-text>
+<script type="text/javascript" src="es2015-polyfills.js" nomodule></script><script type="text/javascript" src="main.js"></script></body>
+</html>
