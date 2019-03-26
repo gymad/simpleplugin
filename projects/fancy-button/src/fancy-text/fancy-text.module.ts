@@ -1,10 +1,12 @@
 import { NgModule, Injector } from "@angular/core";
-import { FancyTextComponent } from './fancy-text.component';
 import { createCustomElement } from '@angular/elements';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FancyTextComponent } from './fancy-text.component';
 
 @NgModule({
     declarations: [FancyTextComponent],
-    entryComponents: [FancyTextComponent]
+    entryComponents: [FancyTextComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FancyTextModule {
     
